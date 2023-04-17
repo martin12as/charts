@@ -70,34 +70,7 @@ spec:
           {{ end }}
           ports:
             - name: web
-              containerPort: 8123
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8123
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 5
-            successThreshold: 2
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8123
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 5
-            successThreshold: 1
-          startupProbe:
-            httpGet:
-              path: /
-              port: 8123
-            initialDelaySeconds: 10
-            periodSeconds: 5
-            timeoutSeconds: 2
-            failureThreshold: 60
-            successThreshold: 1
+              containerPort: 8123         
           env:
             {{ $databaseName := (include "postgres.DatabaseName" .)}}
             {{ $envList := (default list .Values.environmentVariables) }}
