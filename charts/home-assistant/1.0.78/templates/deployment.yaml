@@ -89,15 +89,15 @@ spec:
             timeoutSeconds: 30
             failureThreshold: 10
             successThreshold: 1
-          startupProbe:
-            httpGet:
-              path: /
-              port: 8123
-            initialDelaySeconds: 60
-            periodSeconds: 20
-            timeoutSeconds: 30
-            failureThreshold: 120
-            successThreshold: 1
+#          startupProbe:
+ #           httpGet:
+  #            path: /
+   #           port: 8123
+    #        initialDelaySeconds: 60
+     #       periodSeconds: 20
+      #      timeoutSeconds: 30
+       #     failureThreshold: 120
+        #    successThreshold: 1
           env:
             {{ $databaseName := (include "postgres.DatabaseName" .)}}
             {{ $envList := (default list .Values.environmentVariables) }}
