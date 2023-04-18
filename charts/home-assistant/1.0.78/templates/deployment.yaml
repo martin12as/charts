@@ -79,7 +79,7 @@ spec:
             periodSeconds: 20
             timeoutSeconds: 30
             failureThreshold: 10
-            successThreshold: 2
+            successThreshold: 1
           livenessProbe:
             httpGet:
               path: /
@@ -88,7 +88,7 @@ spec:
             periodSeconds: 20
             timeoutSeconds: 30
             failureThreshold: 10
-            successThreshold: 2
+            successThreshold: 1
           startupProbe:
             httpGet:
               path: /
